@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Interesting FlickPics</string>
+    <string name="extra_subject_share">I think you\'ll enjoy seeing this!</string>
+    <string name="extra_text_share">Found in Flickr\'s list of most interesting pics:</string>
+    <string name="interstitial_ad_unit_id">ca-app-pub-9768055085140533/7458192668</string>
+    <string name="banner_ad_unit_id">ca-app-pub-9768055085140533/2860951039</string>
+    <string name="no_image_found">No Image Found</string>
+    <string name="main_toolbar_title">Most Interesting FlickPics</string>
+    <string name="no_network">No network.</string>
+    <string name="flickr_card_image">Flickr card image</string>
+    <string name="title_main_activity">Interesting FlickPics</string>
+    <string name="title_detail_activity">Interesting FlickPics</string>
+</resources>

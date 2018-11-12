@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MostInterestingFlickPics</string>
+    <string name="extra_subject_share">I think you\'ll enjoy seeing this!</string>
+    <string name="extra_text_share">Found in Flickr\'s list of most interesting pics:</string>
+    <string name="no_image_found">No Image Found</string>
+    <string name="flickr_card_image">flickr card image</string>
+    <string name="main_toolbar_title">Most Interesting FlickPics</string>
+    <string name="no_network">No network!</string>
+    <string name="title_detail_activity">Interesting FlickPics</string>
+    <string name="link_to_flickr_page">See this image on Flickr:</string>
+    <string name="title_main_activity">Interesting FlickPics</string>
+
+</resources>

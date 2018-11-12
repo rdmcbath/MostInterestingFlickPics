@@ -1,0 +1,92 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'keyrdm'
+            keyPassword 'rdm1451'
+            storeFile file('C:/Android/MostInterestingFlickPics/keystore.jks')
+            storePassword 'rdm1451'
+        }
+    }
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.rdm.mostinterestingflickpics"
+        multiDexEnabled true
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable false
+            jniDebuggable false
+            signingConfig signingConfigs.config
+        }
+        debug {
+            signingConfig signingConfigs.config
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'  // butterknife
+    }
+    // Specifies the flavor dimensions you want to use. The order in which you list each dimension
+    // determines its priority, from highest to lowest, when Gradle merges variant sources and
+    // configurations. You must assign each product flavor you configure to one of the flavor dimensions.
+    flavorDimensions "tier"
+    productFlavors {
+        free {
+            applicationId "com.rdm.mostinterestingflickpics.free"
+            versionName "1.3-free"
+            // this boolean can be accessed in java classes by using BuildConfig class
+            // and now we can identify if your app is the paid version or not
+            buildConfigField "boolean", "PAID_VERSION", "false"
+            minSdkVersion 15
+            versionCode 3
+            signingConfig signingConfigs.config
+            targetSdkVersion 26
+        }
+        paid {
+            applicationId "com.rdm.mostinterestingflickpics.paid"
+            versionName "1.3-paid"
+            buildConfigField "boolean", "PAID_VERSION", "true"
+            minSdkVersion 15
+            versionCode 3
+            signingConfig signingConfigs.config
+            targetSdkVersion 26
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.google.android.gms:play-services-ads:17.0.0'
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.2.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
+    implementation 'com.squareup.retrofit:retrofit:2.0.0-beta2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.8.0'
+    implementation 'com.squareup.okio:okio:1.14.0'
+    implementation 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
+    implementation 'com.github.bumptech.glide:glide:3.8.0'
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    implementation 'org.parceler:parceler-api:1.1.6'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    annotationProcessor 'org.parceler:parceler:1.1.6'
+    implementation 'com.android.support:cardview-v7:26.1.0'
+    implementation 'com.android.support:palette-v7:26.1.0'
+}

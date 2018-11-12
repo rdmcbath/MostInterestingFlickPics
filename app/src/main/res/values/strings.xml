@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">InterestingFlickPics</string>
+    <string name="flickr_widget_image">flickr widget image</string>
+    <string name="widget_name">FlickPics</string>
+    <string name="action_settings">Settings</string>
+    <string name="flickr_image">flickr image</string>
+    <string name="link_to_flickr_page">See Image on Flickr Website</string>
+    <string name="fab_share">Share this image</string>
+    <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+</resources>
